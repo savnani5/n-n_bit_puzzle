@@ -104,7 +104,7 @@ if __name__== "__main__":
         visited_states = []
         t = time.time()
 
-        with open(f"Output_test_case_{input_test_cases.index(input_state) + 1}.txt", "w") as text_file:
+        with open(f"nodePath_{input_test_cases.index(input_state) + 1}.txt", "w") as text_file:
             
             # Breadth First Search(BFS) Implementation
             while(1):
