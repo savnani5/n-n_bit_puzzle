@@ -70,18 +70,6 @@ if __name__== "__main__":
     input_state = [[1, 6, 2, 3], [9,5, 7, 4], [0, 10, 11, 8] , [13, 14, 15, 12]]
     goal_state = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]] 
 
-    # n = len(input_state)
-    # input_st = ''
-    # for element in input_state:
-    #     for i in element:
-    #         if i <= 9:
-    #             input_st = input_st + '0' + str(i)
-    #         else:
-    #             input_st = input_st + str(i)
-        
-    # print(input_st) 
-
-    # print(np.where(input_state == 0))
 
     queue = deque()
     queue.append(input_state)
