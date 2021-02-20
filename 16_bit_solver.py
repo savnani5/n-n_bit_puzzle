@@ -42,10 +42,10 @@ def right(pos, state):
 def generate_children(pos, current_state):
     
     children = []
-    up_move = up(pos, current_state.copy())
-    down_move = down(pos, current_state.copy())
-    left_move = left(pos, current_state.copy())
-    right_move = right(pos, current_state.copy())
+    up_move = up(pos, copy.deepcopy(current_state))
+    down_move = down(pos, copy.deepcopy(current_state))
+    left_move = left(pos, copy.deepcopy(current_state))
+    right_move = right(pos, copy.deepcopy(current_state))
     
     if up_move:
         children.append(up_move) 
