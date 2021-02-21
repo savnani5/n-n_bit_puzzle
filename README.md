@@ -1,1 +1,1 @@
-# n-n_bit_puzzle
+# 16_bit_puzzle
