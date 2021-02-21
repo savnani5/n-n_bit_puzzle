@@ -98,7 +98,7 @@ if __name__== "__main__":
 
     for input_state in input_test_cases:
         input_node = Node(4, input_state, None)
-        queue = deque()                             # Using python's inbuilt queue becaus it performs faster enqueue and dequeue operations compared to  a list
+        queue = deque()                             # Using python's inbuilt queue from collections module, because it performs faster enqueue and dequeue operations compared to  a list
         queue.append(input_node)
 
         visited_states = []
