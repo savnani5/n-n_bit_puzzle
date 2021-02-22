@@ -83,18 +83,24 @@ class Node:
         
         return children
     
+    def row_to_col_notation(self):
+        array = np.array(self.state)
+        transpose = array.T
+        output = transpose.tolist()
+        return output
 
 
 if __name__== "__main__":
 
-
+    # Input test cases
     input_test_cases = [[[1, 2, 3, 4],[ 5, 6,0, 8], [9, 10, 7, 12] , [13, 14, 11, 15]], 
                         [[1, 0, 3, 4],[ 5, 2, 7, 8], [9, 6, 10, 11] , [13, 14, 15, 12]], 
                         [[0, 2, 3, 4],[ 1,5, 7, 8], [9, 6, 11, 12] , [13, 10, 14, 15]], 
                         [[5, 1, 2, 3],[0,6, 7, 4], [9, 10, 11, 8] , [13, 14, 15, 12]], 
-                        [[1, 6, 2, 3], [9,5, 7, 4], [0, 10, 11, 8] , [13, 14, 15, 12]]]  # Input 
+                        [[1, 6, 2, 3], [9,5, 7, 4], [0, 10, 11, 8] , [13, 14, 15, 12]]]  
     
-    goal_state = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]]  # Output  
+    # Output  
+    goal_state = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]]  
 
     for input_state in input_test_cases:
         input_node = Node(4, input_state, None)
@@ -109,18 +115,19 @@ if __name__== "__main__":
             # Breadth First Search(BFS) Implementation
             while(1):
                 current_node = queue.popleft()
-                text_file.write(str(current_node.state)+ "\n")
+                text_file.write(str(current_node.row_to_col_notation())+ "\n")
                 # print(current_node, end = '\n')
                 
                 if current_node.state == goal_state:
                     print("Goal Found\n")
                     print("Shortest path:\n")
-                    print(current_node)
+                    print(str(current_node.row_to_col_notation()))
             
             # Backtracking the parent node to find the shortest path
+            # Print sequence GOAL node to INPUT node
                     while(current_node.state != input_state):
                         current_node = current_node.parent
-                        print(current_node)
+                        print(str(current_node.row_to_col_notation()))
                     break
             #____________________________________________________
 
